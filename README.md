@@ -2,43 +2,40 @@
 
 This is a command-line based bug tracking system developed in Python.  
 It allows users to manage projects, users, and issues efficiently through a structured menu system.  
-The database is managed using SQLAlchemy ORM with an SQLite backend.
+The database is managed using SQLAlchemy ORM with an SQLite backend.  
 
 # Features
 
-# Project Management
+## Project Management
 - Create and view multiple projects.  
 - Each project can hold several issues.  
 
-# User Management
+## User Management
 - Add users with unique names and emails.  
 - Users can be assigned to issues.  
 
-# Issue Management
+## Issue Management
 - Create issues tied to specific projects.  
 - Assign issues to users for accountability.  
 - View all issues in a well-formatted table showing title, status, project, and assignee.  
 
-# Persistent Storage
+## Persistent Storage
 - Data is stored in an SQLite database so that information is preserved between runs.  
 
 # Project Structure
+```bash
 bug-tracker-cli/
 │── lib/
-│ ├── cli.py # The main CLI logic and menu system
-│ ├── models.py # SQLAlchemy models (Project, User, Issue)
-│ ├── database.py # Database connection and session configuration
-│── bug_tracker.db # SQLite database file (auto-generated after running the project)
-│── README.md # Project documentation
-
+│   ├── cli.py         # The main CLI logic and menu system
+│   ├── models.py      # SQLAlchemy models (Project, User, Issue)
+│   ├── database.py    # Database connection and session configuration
+│── bug_tracker.db     # SQLite database file (auto-generated after running the project)
+│── README.md          # Project documentation
+Setup Instructions
+1. Clone the repository
 bash
 Copy
 Edit
-
-# Setup Instructions
-
-# 1. Clone the repository
-```bash
 git clone <your-repo-url>
 cd bug-tracker-cli
 2. Install dependencies
@@ -64,7 +61,7 @@ python -m lib.cli
 Usage
 When you run the application, you will see a menu like this:
 
-pgsql
+text
 Copy
 Edit
 Welcome to Your Bug Tracker!
@@ -135,5 +132,6 @@ User receives clear and detailed prompts.
 Documentation
 This README provides full setup, usage, and workflow instructions.
 
+Author
 Work by Pascal Denzel
 Contact: pascaldenzel7@gmail.com / pascaldenzel.student@moringa.school@gmail.com
