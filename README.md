@@ -1,36 +1,28 @@
-# Bug Tracker CLI  
----
+# Bug Tracker CLI
 
 This is a command-line based bug tracking system developed in Python.  
-It allows users to manage **projects**, **users**, and **issues** efficiently through a structured menu system.  
-The database is managed using **SQLAlchemy ORM** with an **SQLite** backend.  
+It allows users to manage projects, users, and issues efficiently through a structured menu system.  
+The database is managed using SQLAlchemy ORM with an SQLite backend.
 
----
+# Features
 
-## Features  
----
-
-### Project Management  
+# Project Management
 - Create and view multiple projects.  
 - Each project can hold several issues.  
 
-### User Management  
+# User Management
 - Add users with unique names and emails.  
 - Users can be assigned to issues.  
 
-### Issue Management  
+# Issue Management
 - Create issues tied to specific projects.  
 - Assign issues to users for accountability.  
 - View all issues in a well-formatted table showing title, status, project, and assignee.  
 
-### Persistent Storage  
+# Persistent Storage
 - Data is stored in an SQLite database so that information is preserved between runs.  
 
----
-
-## Project Structure  
----
-
+# Project Structure
 bug-tracker-cli/
 │── lib/
 │ ├── cli.py # The main CLI logic and menu system
@@ -39,23 +31,18 @@ bug-tracker-cli/
 │── bug_tracker.db # SQLite database file (auto-generated after running the project)
 │── README.md # Project documentation
 
-yaml
+bash
 Copy
 Edit
 
----
+# Setup Instructions
 
-## Setup Instructions  
----
-
-### 1. Clone the repository  
+# 1. Clone the repository
 ```bash
 git clone <your-repo-url>
 cd bug-tracker-cli
 2. Install dependencies
-You will need SQLAlchemy installed.
-
-Using Pipenv:
+You will need SQLAlchemy installed. If you are using Pipenv:
 
 bash
 Copy
@@ -148,10 +135,5 @@ User receives clear and detailed prompts.
 Documentation
 This README provides full setup, usage, and workflow instructions.
 
-Author
 Work by Pascal Denzel
-Contact:
-
-pascaldenzel7@gmail.com
-
-pascaldenzel.student@moringa.school@gmail.com
+Contact: pascaldenzel7@gmail.com / pascaldenzel.student@moringa.school@gmail.com
