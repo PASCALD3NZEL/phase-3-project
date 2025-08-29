@@ -1,15 +1,8 @@
 # lib/cli.py
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 from lib.db.models import Project, User, Issue
 from lib.database import session, engine
 
-# --- Database Setup ---
-engine = create_engine("sqlite:///bug_tracker.db")
-Session = sessionmaker(bind=engine)
-session = Session()
-
-# Print the database file location
+# Print the database file location (debugging)
 print(f"Database file: {engine.url.database}")
 
 # Create a new user
