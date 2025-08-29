@@ -3,7 +3,7 @@
 # Import the necessary tools from SQLAlchemy
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship, sessionmaker
-from lib.database import Base  # Adjusted import for your project structure
+from lib.database import Base
 
 class Project(Base):
     """Represents a software project that contains many issues"""
