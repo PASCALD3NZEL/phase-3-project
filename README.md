@@ -5,7 +5,6 @@ It allows users to manage projects, users, and issues efficiently through a stru
 The database is managed using SQLAlchemy ORM with an SQLite backend.
 
 Features
-
 Project Management
 
 Create and view multiple projects.
@@ -33,22 +32,22 @@ Data is stored in an SQLite database so that information is preserved between ru
 Project Structure
 bug-tracker-cli/
 │── lib/
-│   ├── cli.py         # The main CLI logic and menu system
-│   ├── models.py      # SQLAlchemy models (Project, User, Issue)
-│   ├── database.py    # Database connection and session configuration
-│── bug_tracker.db     # SQLite database file (auto-generated after running the project)
-│── README.md          # Project documentation
+│   ├── cli.py       # The main CLI logic and menu system
+│   ├── models.py    # SQLAlchemy models (Project, User, Issue)
+│   ├── database.py  # Database connection and session configuration
+│── bug_tracker.db   # SQLite database file (auto-generated after running the project)
+│── README.md        # Project documentation
 
 Setup Instructions
-
-Clone the repository
-
+1. Clone the repository
 git clone <your-repo-url>
 cd bug-tracker-cli
 
+2. Install dependencies
 
-Install dependencies
-You will need SQLAlchemy installed. If you are using Pipenv:
+You will need SQLAlchemy installed.
+
+Using Pipenv:
 
 pipenv install sqlalchemy
 
@@ -57,8 +56,8 @@ Or with pip:
 
 pip install sqlalchemy
 
+3. Run the application
 
-Run the application
 From the root directory:
 
 python -m lib.cli
@@ -95,8 +94,7 @@ Example Workflow
 
 Create a project called Website.
 
-Add a user named Denzel with the email denzel@example.com
-.
+Add a user named Denzel with the email denzel@example.com.
 
 Add a new issue titled Fix login bug, assign it to Denzel under the Website project.
 
@@ -111,7 +109,6 @@ SQLAlchemy (ORM)
 SQLite (database)
 
 Grading Alignment
-
 Configuration of Environment and Dependencies
 
 Dependencies installed via pip or Pipenv.
@@ -142,9 +139,15 @@ Logic is separated into functions.
 
 User receives clear and detailed prompts.
 
-WORK BY PASCAL DENZEL
-CONTACT: pascaldenzel7@gmail.com / pascaldenzel.student@moringa.school@gmail.com
-
 Documentation
 
 This README provides full setup, usage, and workflow instructions.
+
+Author
+
+Work by Pascal Denzel
+📧 Contact:
+
+pascaldenzel7@gmail.com
+
+pascaldenzel.student@moringa.school@gmail.com
