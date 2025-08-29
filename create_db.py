@@ -1,8 +1,6 @@
-from sqlalchemy import create_engine
-from lib.db.models import Base
+from lib.database import Base, engine
+from lib.db import models  # 👈 important, so User/Project/Issue classes are registered
 
-# Create engine and tables
-engine = create_engine('sqlite:///bug_tracker.db')
+print("Creating database tables...")
 Base.metadata.create_all(engine)
-
-print("Database tables created successfully!")
+print("✅ Database tables created successfully!")

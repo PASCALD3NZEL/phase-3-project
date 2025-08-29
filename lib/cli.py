@@ -2,12 +2,20 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from lib.db.models import Project, User, Issue
-from lib.database import session
+from lib.database import session, engine
 
 # --- Database Setup ---
 engine = create_engine("sqlite:///bug_tracker.db")
 Session = sessionmaker(bind=engine)
 session = Session()
+
+# Print the database file location
+print(f"Database file: {engine.url.database}")
+
+# Create a new user
+u = User(name="Denzel", email="denzel@example.com")
+session.add(u)
+session.commit()   # 👈 MUST commit
 
 def view_all_projects():
     """Check what projects exist in the database"""
@@ -61,12 +69,8 @@ def create_user():
 
 def view_all_users():
     users = session.query(User).all()
-    if not users:
-        print("No users found.")
-    else:
-        print("\n👥 Users:")
-        for u in users:
-            print(f"{u.id}. {u.name} ({u.email})")
+    for user in users:
+        print(user)
     input("Press Enter to continue...")
 
 def create_new_issue():
