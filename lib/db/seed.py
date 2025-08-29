@@ -1,14 +1,14 @@
 # lib/db/seed.py
 
 from faker import Faker
-from models import Project, User, Ticket, Base
+from lib.db.models import Project, User, Ticket, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import random
 
 # Setup
 fake = Faker()
-engine = create_engine('sqlite:///../bug_tracker.db')
+engine = create_engine('sqlite:///bugtracker.db')
 Base.metadata.create_all(engine) # This is redundant after alembic, but safe
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -23,7 +23,7 @@ print("🌱 Seeding the database...")
 
 # Create Projects
 projects = []
-for i in range(3):
+for idx in range(3):
     project = Project(
         name=fake.catch_phrase(),
         description=fake.bs()
@@ -34,7 +34,7 @@ session.commit()
 
 # Create Users
 users = []
-for i in range(5):
+for idx in range(5):
     user = User(
         name=fake.name(),
         email=fake.email()
@@ -47,7 +47,7 @@ session.commit()
 statuses = ['New', 'Open', 'In Progress', 'Resolved', 'Closed']
 priorities = ['Low', 'Medium', 'High', 'Critical']
 
-for i in range(20):
+for idx in range(20):
     ticket = Ticket(
         title=fake.sentence(),
         description=fake.paragraph(nb_sentences=3),

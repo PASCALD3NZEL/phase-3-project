@@ -1,6 +1,6 @@
 from lib.database import engine, Base
 # Import models so SQLAlchemy knows them before create_all
-from lib import models  # noqa: F401
+from lib.db import models  # noqa: F401
 
 def main():
     # Drop and recreate for a clean slate while finishing the project.

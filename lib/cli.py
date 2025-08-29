@@ -20,8 +20,8 @@ def view_all_users():
     if not users:
         print("No users found.")
         return
-    for u in users:
-        print(f"{u.id}: {u.name} ({u.email})")
+    for user in users:
+        print(f"{user.id}: {user.name} ({user.email})")
 
 def create_new_project():
     name = input("Project name: ").strip()
@@ -39,9 +39,9 @@ def view_all_projects():
     if not projects:
         print("No projects found.")
         return
-    for p in projects:
-        desc = p.description or ""
-        print(f"{p.id}: {p.name} - {desc}")
+    for project in projects:
+        desc = project.description or ""
+        print(f"{project.id}: {project.name} - {desc}")
 
 def create_new_issue():
     title = input("Issue title: ").strip()
@@ -72,8 +72,8 @@ def create_new_issue():
         print("No users found. Create a user first.")
         return
     print("Assign to user:")
-    for u in users:
-        print(f"{u.id}: {u.name} ({u.email})")
+    for user in users:
+        print(f"{user.id}: {user.name} ({user.email})")
     try:
         user_id = int(input("User ID: ").strip())
     except ValueError:
@@ -102,10 +102,10 @@ def view_all_issues():
     header = f"{'ID':<4} | {'Title':<30} | {'Status':<12} | {'Project':<20} | {'Assignee':<20}"
     print(header)
     print("-" * len(header))
-    for i in issues:
-        project_name = i.project.name if i.project else "Unassigned"
-        user_name = i.user.name if i.user else "Unassigned"
-        print(f"{i.id:<4} | {i.title[:30]:<30} | {i.status:<12} | {project_name[:20]:<20} | {user_name[:20]:<20}")
+    for issue in issues:
+        project_name = issue.project.name if issue.project else "Unassigned"
+        user_name = issue.user.name if issue.user else "Unassigned"
+        print(f"{issue.id:<4} | {issue.title[:30]:<30} | {issue.status:<12} | {project_name[:20]:<20} | {user_name[:20]:<20}")
 
 def main_menu():
     while True:
@@ -121,17 +121,23 @@ def main_menu():
         choice = input("Choose 1-7: ").strip()
 
         if choice == "1":
-            create_new_project(); pause()
+            create_new_project()
+            pause()
         elif choice == "2":
-            view_all_projects(); pause()
+            view_all_projects()
+            pause()
         elif choice == "3":
-            create_new_issue(); pause()
+            create_new_issue()
+            pause()
         elif choice == "4":
-            view_all_issues(); pause()
+            view_all_issues()
+            pause()
         elif choice == "5":
-            create_user(); pause()
+            create_user()
+            pause()
         elif choice == "6":
-            view_all_users(); pause()
+            view_all_users()
+            pause()
         elif choice == "7":
             print("Goodbye.")
             break
